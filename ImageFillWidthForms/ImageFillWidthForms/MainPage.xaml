@@ -4,8 +4,22 @@
              xmlns:local="clr-namespace:ImageFillWidthForms"
              x:Class="ImageFillWidthForms.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <local:AspectRatioContainer ImageToSize="corvette.jpeg">
+            <Image Source="corvette.jpeg" HorizontalOptions="Fill" Aspect="AspectFill"></Image>
+        </local:AspectRatioContainer>
+        <Button Grid.Row="1" Text="Button 1"></Button>
+        <local:AspectRatioContainer Grid.Row="2" ImageToSize="https://static.pexels.com/photos/358070/pexels-photo-358070.jpeg">
+            <Image Source="https://static.pexels.com/photos/358070/pexels-photo-358070.jpeg" />
+        </local:AspectRatioContainer>
+        <Button Text="Button 2" Grid.Row="3"></Button>
+    </Grid>
 
 </ContentPage>
